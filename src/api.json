@@ -1,0 +1,112 @@
+{
+  "city": "Eindhoven",
+  "country": "Netherlands",
+  "coordinates": { "longitude": 5.478633, "latitude": 51.4392648 },
+  "daily": [
+    {
+      "condition": {
+        "description": "light rain",
+        "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+        "icon": "rain-day"
+      },
+      "temperature": {
+        "day": 7.21,
+        "minimum": 5.98,
+        "maximum": 10.18,
+        "humidity": 79
+      },
+      "wind": { "speed": 5.16 },
+      "time": 1679310000
+    },
+    {
+      "condition": {
+        "description": "light rain",
+        "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+        "icon": "rain-day"
+      },
+      "temperature": {
+        "day": 11.83,
+        "minimum": 8.48,
+        "maximum": 13.26,
+        "humidity": 72
+      },
+      "wind": { "speed": 7.02 },
+      "time": 1679396400
+    },
+    {
+      "condition": {
+        "description": "moderate rain",
+        "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+        "icon": "rain-day"
+      },
+      "temperature": {
+        "day": 9.56,
+        "minimum": 8.6,
+        "maximum": 10.53,
+        "humidity": 84
+      },
+      "wind": { "speed": 7.83 },
+      "time": 1679482800
+    },
+    {
+      "condition": {
+        "description": "light rain",
+        "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+        "icon": "rain-day"
+      },
+      "temperature": {
+        "day": 12.52,
+        "minimum": 10.03,
+        "maximum": 13.95,
+        "humidity": 74
+      },
+      "wind": { "speed": 8.07 },
+      "time": 1679569200
+    },
+    {
+      "condition": {
+        "description": "light rain",
+        "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+        "icon": "rain-day"
+      },
+      "temperature": {
+        "day": 14.24,
+        "minimum": 9.18,
+        "maximum": 14.24,
+        "humidity": 55
+      },
+      "wind": { "speed": 9.3 },
+      "time": 1679655600
+    },
+    {
+      "condition": {
+        "description": "light rain",
+        "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+        "icon": "rain-day"
+      },
+      "temperature": {
+        "day": 12.46,
+        "minimum": 7.86,
+        "maximum": 12.65,
+        "humidity": 59
+      },
+      "wind": { "speed": 9.25 },
+      "time": 1679742000
+    },
+    {
+      "condition": {
+        "description": "light rain",
+        "icon_url": "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
+        "icon": "rain-day"
+      },
+      "temperature": {
+        "day": 11.69,
+        "minimum": 5.61,
+        "maximum": 11.69,
+        "humidity": 66
+      },
+      "wind": { "speed": 6.13 },
+      "time": 1679828400
+    }
+  ]
+}

@@ -6,8 +6,11 @@ import WeekForecast from "./components/WeekForecast";
 import Footer from "./components/Footer";
 import SearchCity from "./components/SearchCity";
 import MainBackground from "./components/MainBackground";
+import apiReponse from "./api.json"
 
 export default function App() {
+
+
   return (
     <div>
       <MainBackground />
