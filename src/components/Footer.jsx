@@ -8,7 +8,7 @@ export default function Footer() {
       >
         Open-source code
       </a>
-      by Moara Miranda
+      <span> by Moara Miranda</span>
     </div>
   );
 }

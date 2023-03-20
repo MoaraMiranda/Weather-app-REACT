@@ -6,9 +6,9 @@ export default function CurrentDate() {
     hour = `0${hour}`;
   }
   let minutes = currentDate.getMinutes();
-  // if (minutes < 10) {
-  //   minutes = `0${minutes}`;
-  // }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   let days = [
     "Sunday",
