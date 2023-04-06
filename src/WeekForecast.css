@@ -1,0 +1,15 @@
+.forecast {
+  margin-top: 30px;
+}
+.weather-forecast-day{
+  font-size: 20px;
+}
+.weather-forecast-temperature-min {
+ opacity: 0.6;
+}
+.forecast > .col {
+  background-color: #93b2cb2b;
+  border-radius: 10px;
+  padding: 15px;
+}
+

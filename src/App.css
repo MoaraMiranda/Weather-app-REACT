@@ -7,32 +7,9 @@ body {
   );
   color: #fff;
 }
-p {
-  text-align: center;
-  font-size: 14px;
-  letter-spacing: 5px;
-  text-align: center;
-  background-color: #ff0199a8;
-  border-radius: 20px;
-  padding: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-  /* width: 500px; */
-}
-a {
-  text-decoration: none;
-  color: #fff;
-}
-a:hover {
-  cursor: pointer;
-  color: #ff0199;
-}
-input {
-  border-radius: 10px;
-}
-
 .weather-app {
   max-width: 600px;
+  height: 400px;
   margin-top: 40px;
   padding: 30px;
   /* From https://css.glass */
@@ -42,65 +19,4 @@ input {
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.50);
-}
-.header-icon {
-  font-size: 60px;
-}
-.header-temperature {
-  font-size: 80px;
-  font-weight: bold;
-  margin: 0 20px 0 0;
-  float: left;
-}
-
-.header-city {
-  font-size: 20px;
-  clear: both;
-}
-.city-search {
-  margin: 10px 0 40px;
-}
-.forecast {
-  margin-top: 30px;
-}
-.weather-forecast-day{
-  font-size: 20px;
-}
-.weather-forecast-temperature-min {
- opacity: 0.6;
-}
-.search-form input {
-  padding: 10px;
-  margin-right: 8;
-}
-.text-input {
-  margin-right: 13px;
-  border: none;
-}
-.button-input {
-  background-color: #03b6d7;
-  color: #fff;
-  border: none;
-}
-.button-input1 {
-  background-color: #ff0199;
-  color: #fff;
-  border: none;
-  margin-left: 13px;
-}
-.units {
-  margin-top: 10px;
-  position: absolute;
-}
-.footer {
-  text-align: center;
-  line-height: 30px;
-}
-.footer a{
-  cursor: pointer;
-}
-.forecast > .col {
-  background-color: #93b2cb2b;
-  border-radius: 10px;
-  padding: 15px;
 }

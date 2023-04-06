@@ -1,0 +1,25 @@
+.header-temperature {
+  font-size: 130px;
+  font-weight: bold;
+  margin: 0 20px 0 0;
+  float: left;
+  color: #fff;
+}
+.units {
+  margin-top: 20px;
+  position: absolute;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  cursor: pointer;
+  color: #ff0199;
+}
+.header-city {
+  font-size: 30px;
+  padding-left: 10px;
+  clear: both;
+  color: #fff;
+}

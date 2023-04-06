@@ -15,7 +15,7 @@ export default function App() {
       <div className="container weather-app">
       <MainBackground />
         <SearchCity />
-        <div className="row align-items-center">
+        <div className="row">
           <CurrentIcon />
           <CurrentDetails />
         </div>

@@ -1,3 +1,5 @@
+import "../SearchCity.css"
+
 export default function SearchCity(){
   return (
     <div className="row text-center city-search">

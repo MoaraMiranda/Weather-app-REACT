@@ -1,8 +1,15 @@
+import "../CurrentIcon.css"
+
 export default function CurrentIcon() {
   return (
-    <div className="col-9 d-flex">
-      <div className="text-end">
-        <img src="./sunny.png" width={150} id="icon" alt="weather-description" />
+    <div className="col-9 d-flex align-items-center">
+      <div className="header-icon">
+        <img
+          src="./sunny.png"
+          width={150}
+          id="icon"
+          alt="weather-description"
+        />
       </div>
 
       <div className="">
@@ -11,7 +18,7 @@ export default function CurrentIcon() {
         </h1>
         <span className="units">
           <a id="celsius-temperature" href="">
-           °C{" "}
+            °C{" "}
           </a>
           <a id="fahrenheit-temperature" href="">
             | °F{" "}

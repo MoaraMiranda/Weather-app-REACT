@@ -1,0 +1,13 @@
+.date p{
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-align: center;
+  background-color: #ff0199a8;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 30px;
+  color: #fff;
+}

@@ -1,0 +1,8 @@
+.footer {
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+}
+.footer a{
+  cursor: pointer;
+}

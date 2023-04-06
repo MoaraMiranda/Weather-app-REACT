@@ -1,0 +1,25 @@
+input {
+  border-radius: 10px;
+}
+.city-search {
+  margin: 0 0 20px;
+}
+.search-form input {
+  padding: 10px;
+  margin-right: 8;
+}
+.text-input {
+  margin-right: 13px;
+  border: none;
+}
+.button-input {
+  background-color: #03b6d7;
+  color: #fff;
+  border: none;
+}
+.button-input1 {
+  background-color: #ff0199;
+  color: #fff;
+  border: none;
+  margin-left: 13px;
+}

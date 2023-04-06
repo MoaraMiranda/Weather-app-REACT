@@ -1,3 +1,6 @@
+import React from "react";
+import "../CurrentDetails.css";
+
 export default function CurrentDetails() {
   return (
     <div className="col-3 text-end header-more">

@@ -1,3 +1,5 @@
+import "../CurrentDate.css";
+
 export default function CurrentDate() {
   let currentDate = new Date();
 
@@ -23,7 +25,7 @@ export default function CurrentDate() {
   const dateTime = `${day} - ${hour}:${minutes}`;
 
   return (
-    <div className="CurrentDate">
+    <div className="CurrentDate date">
       <p>{dateTime}</p>
     </div>
   );
