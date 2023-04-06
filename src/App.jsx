@@ -1,4 +1,5 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 import CurrentDate from "./components/CurrentDate";
 import CurrentDetails from "./components/CurrentDetails";
 import CurrentIcon from "./components/CurrentIcon";
@@ -9,19 +10,17 @@ import MainBackground from "./components/MainBackground";
 import apiReponse from "./api.json"
 
 export default function App() {
-
-
   return (
     <div>
+      <div className="container weather-app">
       <MainBackground />
-      <div className="container card weather-app">
-        <CurrentDate />
+        <SearchCity />
         <div className="row align-items-center">
           <CurrentIcon />
           <CurrentDetails />
         </div>
         <WeekForecast />
-        <SearchCity />
+        <CurrentDate />
       </div>
       <Footer />
     </div>

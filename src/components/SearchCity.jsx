@@ -4,9 +4,10 @@ export default function SearchCity(){
       <form id="search-form" className="search-form">
         <input
           id="city-input"
-          type="text"
+          type="search"
           placeholder="City Name"
           className="text-input"
+          autoFocus="on"
         />
         <input type="submit" value="Search" className="button-input" />
         <input
