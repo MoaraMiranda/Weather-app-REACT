@@ -6,9 +6,9 @@ export default function Footer() {
         target="_blank"
         className="open-source-link"
       >
-        Open-source code
+        Open-source code on Github
       </a>
-      <span> by Moara Miranda</span>
+      <span> created by Moara Miranda</span>
     </div>
   );
 }
