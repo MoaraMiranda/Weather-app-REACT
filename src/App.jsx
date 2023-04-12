@@ -15,7 +15,6 @@ export default function App() {
   const [ready, setReady] = useState(false);
   const [wheatherData, setWeatherData] = useState({});
   function handleResponse(response) {
-    console.log(response.data)
     setWeatherData({
       temperature: response.data.temperature.current,
       city: response.data.city,
@@ -23,7 +22,7 @@ export default function App() {
       icon: response.data.condition.icon_url,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      fells: response.data.temperature.feels_like,
+      feels: response.data.temperature.feels_like,
     });
     setReady(true);
   }
@@ -38,7 +37,7 @@ export default function App() {
               city={wheatherData.city}
               temperature={wheatherData.temperature}
             />
-            <CurrentDetails />
+            <CurrentDetails humidity={wheatherData.humidity} wind={wheatherData.wind} description={wheatherData.description} feels={wheatherData.feels}/>
           </div>
           <WeekForecast />
           <CurrentDate />
