@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import CurrentDate from "./components/CurrentDate";
 import CurrentDetails from "./components/CurrentDetails";
-import CurrentIcon from "./components/CurrentIcon";
+import CurrentWeather from "./components/CurrentWeather";
 import WeekForecast from "./components/WeekForecast";
 import Footer from "./components/Footer";
 import SearchCity from "./components/SearchCity";
@@ -16,7 +16,7 @@ export default function App() {
       <MainBackground />
         <SearchCity />
         <div className="row">
-          <CurrentIcon />
+          <CurrentWeather />
           <CurrentDetails />
         </div>
         <WeekForecast />
