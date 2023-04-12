@@ -7,10 +7,10 @@ export default function CurrentWeather(props) {
       <div className="col-9 d-flex align-items-center">
         <div className="header-icon">
           <img
-            src="./sunny.png"
+            src={props.icon}
             width={150}
             id="icon"
-            alt="response.data.condition.description"
+            alt={props.description}
           />
         </div>
 

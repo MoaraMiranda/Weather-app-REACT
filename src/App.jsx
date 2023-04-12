@@ -12,21 +12,22 @@ import Axios from "axios";
 import { useState } from "react";
 
 export default function App() {
-  const [ready, setReady] = useState(false);
-  const [wheatherData, setWeatherData] = useState({});
+  const [wheatherData, setWeatherData] = useState({ ready: false});
+  let defaultCity = "New York";
   function handleResponse(response) {
     setWeatherData({
+      ready: true,
       temperature: response.data.temperature.current,
       city: response.data.city,
       description: response.data.condition.description,
-      icon: response.data.condition.icon_url,
+      iconUrl: response.data.condition.icon_url,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       feels: response.data.temperature.feels_like,
     });
-    setReady(true);
+
   }
-  if (ready) {
+  if (wheatherData.ready) {
     return (
       <div>
         <div className="container weather-app">
@@ -36,8 +37,15 @@ export default function App() {
             <CurrentWeather
               city={wheatherData.city}
               temperature={wheatherData.temperature}
+              icon={wheatherData.iconUrl}
+              description={wheatherData.description}
             />
-            <CurrentDetails humidity={wheatherData.humidity} wind={wheatherData.wind} description={wheatherData.description} feels={wheatherData.feels}/>
+            <CurrentDetails
+              humidity={wheatherData.humidity}
+              wind={wheatherData.wind}
+              description={wheatherData.description}
+              feels={wheatherData.feels}
+            />
           </div>
           <WeekForecast />
           <CurrentDate />
@@ -47,7 +55,7 @@ export default function App() {
     );
   } else {
     const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${defaultCity}&key=${apiKey}&units=metric`;
     Axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
