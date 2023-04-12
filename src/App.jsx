@@ -32,7 +32,7 @@ export default function App() {
       <div>
         <div className="container weather-app">
           <MainBackground />
-          <SearchCity />
+          <SearchCity City={defaultCity}/>
           <div className="row">
             <CurrentWeather
               city={wheatherData.city}
