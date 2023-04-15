@@ -12,7 +12,8 @@ import Axios from "axios";
 import { useState } from "react";
 
 export default function App() {
-  const [wheatherData, setWeatherData] = useState({ ready: false});
+  const [wheatherData, setWeatherData] = useState({ ready: false });
+  
   let defaultCity = "New York";
   function handleResponse(response) {
     setWeatherData({
@@ -25,14 +26,18 @@ export default function App() {
       wind: response.data.wind.speed,
       feels: response.data.temperature.feels_like,
     });
-
+  }
+  function search(cityName) {
+    const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
+    Axios.get(apiUrl).then(handleResponse);
   }
   if (wheatherData.ready) {
     return (
       <div>
         <div className="container weather-app">
           <MainBackground />
-          <SearchCity City={defaultCity}/>
+          <SearchCity onSubmit={search} />
           <div className="row">
             <CurrentWeather
               city={wheatherData.city}
@@ -54,10 +59,7 @@ export default function App() {
       </div>
     );
   } else {
-    const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${defaultCity}&key=${apiKey}&units=metric`;
-    Axios.get(apiUrl).then(handleResponse);
-
+    search(defaultCity)
     return "Loading...";
   }
 }

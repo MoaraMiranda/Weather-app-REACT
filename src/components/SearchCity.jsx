@@ -5,7 +5,7 @@ export default function SearchCity(props) {
   const [changeCity, setChangeCity] = useState(props.defaultCity);
   function handleSubmit(event) {
     event.preventDefault();
-    alert(changeCity)
+    props.onSubmit(changeCity);
   }
 
   function handleCityChange(event) {
