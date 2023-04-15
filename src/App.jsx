@@ -41,7 +41,7 @@ export default function App() {
           <div className="row">
             <CurrentWeather
               city={wheatherData.city}
-              temperature={wheatherData.temperature}
+              celsius={wheatherData.temperature}
               icon={wheatherData.iconUrl}
               description={wheatherData.description}
             />
