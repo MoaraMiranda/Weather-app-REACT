@@ -6,6 +6,7 @@
 }
 .weather-forecast-temperature-min {
  opacity: 0.6;
+ margin-left: 5px;
 }
 .forecast > .col {
   background-color: #93b2cb2b;
