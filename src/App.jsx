@@ -52,7 +52,7 @@ export default function App() {
               feels={wheatherData.feels}
             />
           </div>
-          <WeekForecast />
+          <WeekForecast city={wheatherData.city} />
           <CurrentDate />
         </div>
         <Footer />
