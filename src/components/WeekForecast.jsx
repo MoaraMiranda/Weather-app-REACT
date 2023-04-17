@@ -7,10 +7,18 @@ export default function WeekForecast(props) {
   const [forecastData, setForecastData] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() =>{
+  useEffect(() => {
     setLoaded(false);
-  },[props.city])
+  }, [props.city]);
+  
+  useEffect(() => {
+    handleApiCall();
+  }, [props.city]);
 
+  function handleApiCall() {
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${props.apiKey}&units=metric`;
+    Axios.get(apiUrl).then(handleResponse);
+  }
   function handleResponse(response) {
     setForecastData(response.data.daily);
     setLoaded(true);
@@ -19,22 +27,20 @@ export default function WeekForecast(props) {
     return (
       <div className="WeekForecast row row-cols-5 text-center forecast">
         {forecastData.map(function (dailyForecast, index) {
-          if (index < 5){
+          if (index < 5) {
             return (
               <div className="col" key={index}>
                 <ForecastDay data={dailyForecast} />
               </div>
             );
-          } else{
+          } else {
+           
             return null;
           }
         })}
       </div>
     );
   } else {
-    const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}&units=metric`;
-    Axios.get(apiUrl).then(handleResponse);
-    return null;
+     return null;
   }
 }

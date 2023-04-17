@@ -40,18 +40,18 @@ export default function App() {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
     Axios.get(apiUrl).then(handleResponse);
   }
-
-  function searchLocation() {
-    navigator.geolocation.getCurrentPosition(setLocation);
-  }
-
+  
   function setLocation(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
     Axios.get(apiUrl).then(handleResponse);
   }
-console.log("passou")
+
+  function searchLocation() {
+    navigator.geolocation.getCurrentPosition(setLocation);
+  }
+
   if (wheatherData.ready) {
     return (
       <div>
@@ -75,7 +75,7 @@ console.log("passou")
               feels={wheatherData.feels}
             />
           </div>
-          <WeekForecast city={wheatherData.city} />
+          <WeekForecast city={wheatherData.city} apiKey={apiKey}/>
           <CurrentDate />
         </div>
         <Footer />
