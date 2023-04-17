@@ -2,11 +2,12 @@ body {
   background: rgb(0, 212, 255);
   background: linear-gradient(
     90deg,
-    rgba(0, 70, 255, .70) 20%,
-    rgba(255, 0, 177, .80) 100%
+    rgba(0, 70, 255, 0.7) 20%,
+    rgba(255, 0, 177, 0.8) 100%
   );
   color: #fff;
 }
+
 #root .weather-app {
   max-width: 600px;
   margin-top: 40px;
@@ -17,7 +18,7 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.50);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .bg {
   background-position: center;
@@ -28,4 +29,23 @@ body {
   position: fixed;
   top: 0;
   z-index: -1;
+}
+@media (max-width: 480px) {
+  #root .weather-app {
+    margin: 20px;
+    width: auto;
+  }
+  .search-form .text-input{
+    flex: 1;
+  }
+  .search-form{
+    flex-direction: column;
+  }
+  .search-form .button-location{
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .header-more{
+    display:none;
+  }
 }

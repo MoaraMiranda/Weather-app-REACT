@@ -8,11 +8,8 @@ export default function WeekForecast(props) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setLoaded(false);
-  }, [props.city]);
-  
-  useEffect(() => {
     handleApiCall();
+    setLoaded(false);
   }, [props.city]);
 
   function handleApiCall() {
@@ -33,9 +30,6 @@ export default function WeekForecast(props) {
                 <ForecastDay data={dailyForecast} />
               </div>
             );
-          } else {
-           
-            return null;
           }
         })}
       </div>

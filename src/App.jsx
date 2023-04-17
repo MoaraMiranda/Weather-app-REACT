@@ -15,9 +15,9 @@ const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
 export default function App() {
   const [wheatherData, setWeatherData] = useState({ ready: false });
 
-  useEffect(()=>{
+  useEffect(() => {
     searchLocation();
-  },[])
+  }, []);
 
   function handleResponse(response) {
     if (response.data.status === "not_found") {
@@ -40,7 +40,7 @@ export default function App() {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
     Axios.get(apiUrl).then(handleResponse);
   }
-  
+
   function setLocation(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
@@ -51,10 +51,9 @@ export default function App() {
   function searchLocation() {
     navigator.geolocation.getCurrentPosition(setLocation);
   }
-
   if (wheatherData.ready) {
     return (
-      <div>
+      <>
         <MainBackground background={wheatherData.background} />
         <div className="weather-app container ">
           <SearchCity
@@ -75,11 +74,11 @@ export default function App() {
               feels={wheatherData.feels}
             />
           </div>
-          <WeekForecast city={wheatherData.city} apiKey={apiKey}/>
+          <WeekForecast city={wheatherData.city} apiKey={apiKey} />
           <CurrentDate />
         </div>
         <Footer />
-      </div>
+      </>
     );
   } else {
     return "Loading...";

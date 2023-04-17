@@ -4,9 +4,12 @@ input {
 .city-search {
   margin: 0 0 20px;
 }
+.search-form{
+  display: flex;
+  justify-content: center;
+}
 .search-form input {
   padding: 10px;
-  margin-right: 8;
 }
 .text-input {
   margin-right: 13px;
@@ -17,9 +20,12 @@ input {
   color: #fff;
   border: none;
 }
-.button-input1 {
+.button-location {
   background-color: #ff0199;
   color: #fff;
   border: none;
   margin-left: 13px;
+}
+.search-wrapper{
+  display: flex;
 }

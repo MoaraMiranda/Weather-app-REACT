@@ -14,7 +14,7 @@ function showCelsius(event){
 }
   if (unit === "celsius"){
     return (
-      <div className="col-9 d-flex align-items-center">
+      <div className="col-9  d-flex align-items-center">
         <div className="header-icon">
           <img src={props.icon} width={100} id="icon" alt={props.description} />
         </div>
