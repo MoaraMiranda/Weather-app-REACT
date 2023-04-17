@@ -7,38 +7,60 @@ import WeekForecast from "./components/WeekForecast";
 import Footer from "./components/Footer";
 import SearchCity from "./components/SearchCity";
 import MainBackground from "./components/MainBackground";
-import apiReponse from "./api.json";
 import Axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
 
 export default function App() {
   const [wheatherData, setWeatherData] = useState({ ready: false });
-  
-  let defaultCity = "New York";
+
+  useEffect(()=>{
+    searchLocation();
+  },[])
+
   function handleResponse(response) {
-    setWeatherData({
-      ready: true,
-      temperature: response.data.temperature.current,
-      city: response.data.city,
-      description: response.data.condition.description,
-      iconUrl: response.data.condition.icon_url,
-      humidity: response.data.temperature.humidity,
-      wind: response.data.wind.speed,
-      feels: response.data.temperature.feels_like,
-      background: response.data.condition.icon,
-    });
+    if (response.data.status === "not_found") {
+      alert(response.data.message);
+    } else {
+      setWeatherData({
+        ready: true,
+        temperature: response.data.temperature.current,
+        city: response.data.city,
+        description: response.data.condition.description,
+        iconUrl: response.data.condition.icon_url,
+        humidity: response.data.temperature.humidity,
+        wind: response.data.wind.speed,
+        feels: response.data.temperature.feels_like,
+        background: response.data.condition.icon,
+      });
+    }
   }
-  function search(cityName) {
-    const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
+  function searchCity(cityName) {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
     Axios.get(apiUrl).then(handleResponse);
   }
+
+  function searchLocation() {
+    navigator.geolocation.getCurrentPosition(setLocation);
+  }
+
+  function setLocation(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+    Axios.get(apiUrl).then(handleResponse);
+  }
+console.log("passou")
   if (wheatherData.ready) {
     return (
       <div>
-          <MainBackground background={wheatherData.background}/>
+        <MainBackground background={wheatherData.background} />
         <div className="weather-app container ">
-          <SearchCity onSubmit={search} />
+          <SearchCity
+            onSubmit={searchCity}
+            onClickMyLocation={searchLocation}
+          />
           <div className="row">
             <CurrentWeather
               city={wheatherData.city}
@@ -60,7 +82,6 @@ export default function App() {
       </div>
     );
   } else {
-    search(defaultCity)
     return "Loading...";
   }
 }
