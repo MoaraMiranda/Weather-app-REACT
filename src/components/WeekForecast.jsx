@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../WeekForecast.css";
 import Axios from "axios";
 import ForecastDay from "./ForecastDay";
@@ -6,21 +6,28 @@ import ForecastDay from "./ForecastDay";
 export default function WeekForecast(props) {
   const [forecastData, setForecastData] = useState(null);
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() =>{
+    setLoaded(false);
+  },[props.city]);
+
   function handleResponse(response) {
     setForecastData(response.data.daily);
     setLoaded(true);
   }
   if (loaded) {
-    console.log(forecastData);
     return (
       <div className="WeekForecast row row-cols-5 text-center forecast">
         {forecastData.map(function (dailyForecast, index) {
-          if (index < 5)
+          if (index < 5){
             return (
               <div className="col" key={index}>
                 <ForecastDay data={dailyForecast} />
               </div>
             );
+          } else{
+            return null;
+          }
         })}
       </div>
     );
