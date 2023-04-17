@@ -10,17 +10,21 @@ export default function WeekForecast(props) {
     setForecastData(response.data.daily);
     setLoaded(true);
   }
-  if (loaded){
-    console.log(forecastData)
+  if (loaded) {
+    console.log(forecastData);
     return (
       <div className="WeekForecast row row-cols-5 text-center forecast">
-        <div className="col">
-          <ForecastDay data={forecastData[0]}/>
-        </div>
+        {forecastData.map(function (dailyForecast, index) {
+          if (index < 5)
+            return (
+              <div className="col" key={index}>
+                <ForecastDay data={dailyForecast} />
+              </div>
+            );
+        })}
       </div>
     );
-    
-  }else {
+  } else {
     const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}&units=metric`;
     Axios.get(apiUrl).then(handleResponse);
