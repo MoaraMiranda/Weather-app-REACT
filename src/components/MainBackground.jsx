@@ -1,3 +1,9 @@
-export default function MainBackground(){
-  return <div className="MainBackground bg"></div>;
+export default function MainBackground(props){
+  console.log(props)
+  return (
+    <div
+      className="MainBackground bg"
+      style={{backgroundImage: `url(${props.background}.jpg)`}}
+    ></div>
+  );
 }

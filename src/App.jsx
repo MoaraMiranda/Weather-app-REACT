@@ -25,6 +25,7 @@ export default function App() {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       feels: response.data.temperature.feels_like,
+      background: response.data.condition.icon,
     });
   }
   function search(cityName) {
@@ -35,8 +36,8 @@ export default function App() {
   if (wheatherData.ready) {
     return (
       <div>
-        <div className="container weather-app">
-          <MainBackground />
+          <MainBackground background={wheatherData.background}/>
+        <div className="weather-app container ">
           <SearchCity onSubmit={search} />
           <div className="row">
             <CurrentWeather

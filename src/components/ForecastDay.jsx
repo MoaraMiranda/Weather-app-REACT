@@ -10,7 +10,7 @@ return days[day];
   return (
     <div>
       <div className="weather-forecast-day">{day()}</div>
-      <img src={props.data.condition.icon_url} alt="icon" height={90} />
+      <img src={props.data.condition.icon_url} alt="icon" height={75} />
       <div>
         <span>{Math.round(props.data.temperature.maximum)}°</span>
         <span className="weather-forecast-temperature-min">
