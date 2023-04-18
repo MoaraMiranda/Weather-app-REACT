@@ -7,7 +7,7 @@ export default function CurrentDetails(props) {
   let city = "Lisbon";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   return (
-    <div className="col-3 text-end header-more">
+    <div className="text-end header-more">
       Humidity: <span>{props.humidity}%</span>
       <div className="col">
         Wind: <span>{Math.round(props.wind)} Km/h</span>

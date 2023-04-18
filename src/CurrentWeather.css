@@ -6,7 +6,8 @@
   color: #fff;
 }
 .units {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: -17px;
   position: absolute;
 }
 a {
@@ -17,9 +18,16 @@ a:hover {
   cursor: pointer;
   color: #ff0199;
 }
-.header-city {
-  font-size: 25px;
-  padding-left: 10px;
-  clear: both;
-  color: #fff;
+
+.header-icon img {
+  width: 100px;
+}
+
+.current-weather {
+  display: flex;
+}
+
+.weather-block {
+  display: flex;
+  flex: 1;
 }

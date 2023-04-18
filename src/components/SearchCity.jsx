@@ -31,6 +31,7 @@ export default function SearchCity(props) {
             placeholder="City Name"
             className="text-input"
             autoFocus="on"
+            size={10}
             onChange={handleCityChange}
           />
           <input type="submit" value="🔍" className="button-input" />

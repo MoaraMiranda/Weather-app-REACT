@@ -4,16 +4,18 @@ input {
 .city-search {
   margin: 0 0 20px;
 }
-.search-form{
+.search-form {
   display: flex;
   justify-content: center;
 }
 .search-form input {
   padding: 10px;
 }
+
 .text-input {
   margin-right: 13px;
   border: none;
+  flex: 1;
 }
 .button-input {
   background-color: #03b6d7;
@@ -26,6 +28,7 @@ input {
   border: none;
   margin-left: 13px;
 }
-.search-wrapper{
+.search-wrapper {
   display: flex;
+  flex: 1;
 }

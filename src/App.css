@@ -6,6 +6,7 @@ body {
     rgba(255, 0, 177, 0.8) 100%
   );
   color: #fff;
+  min-width: 320px;
 }
 
 #root .weather-app {
@@ -30,22 +31,63 @@ body {
   top: 0;
   z-index: -1;
 }
+.header-city {
+  font-size: 25px;
+  padding-left: 10px;
+  clear: both;
+  color: #fff;
+}
+
 @media (max-width: 480px) {
   #root .weather-app {
     margin: 20px;
     width: auto;
   }
-  .search-form .text-input{
-    flex: 1;
-  }
-  .search-form{
+
+  .search-form {
     flex-direction: column;
   }
-  .search-form .button-location{
+  .search-form .button-location {
     margin-top: 10px;
     margin-left: 0;
   }
-  .header-more{
-    display:none;
+  .header-more {
+    font-size: 13px;
+    margin-top: 15px;
+  }
+
+  .header-icon img {
+    width: 70px;
+  }
+  .header-temperature {
+    font-size: 60px;
+  }
+  .header-city {
+    font-size: 25px;
+    text-align: center;
+  }
+  .current-weather {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-more {
+    text-align: center !important ;
+  }
+
+  .forecast {
+    flex-direction: column;
+  }
+  .forecast .col {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .footer{
+    margin: 20px;
   }
 }

@@ -1,5 +1,3 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
 import CurrentDate from "./components/CurrentDate";
 import CurrentDetails from "./components/CurrentDetails";
 import CurrentWeather from "./components/CurrentWeather";
@@ -7,8 +5,11 @@ import WeekForecast from "./components/WeekForecast";
 import Footer from "./components/Footer";
 import SearchCity from "./components/SearchCity";
 import MainBackground from "./components/MainBackground";
+
 import Axios from "axios";
 import { useEffect, useState } from "react";
+
+import "./App.css";
 
 const apiKey = "ee38ce771f31t049ab81b0of21a152fe";
 
@@ -55,12 +56,13 @@ export default function App() {
     return (
       <>
         <MainBackground background={wheatherData.background} />
-        <div className="weather-app container ">
+        <div className="weather-app container">
           <SearchCity
             onSubmit={searchCity}
             onClickMyLocation={searchLocation}
           />
-          <div className="row">
+          <h3 className="header-city">{wheatherData.city}</h3>
+          <div className="current-weather">
             <CurrentWeather
               city={wheatherData.city}
               celsius={wheatherData.temperature}
