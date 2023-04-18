@@ -29,7 +29,7 @@ export default function App() {
         temperature: response.data.temperature.current,
         city: response.data.city,
         description: response.data.condition.description,
-        iconUrl: response.data.condition.icon_url,
+        iconUrl: response.data.condition.icon_url.replace("http", "https"),
         humidity: response.data.temperature.humidity,
         wind: response.data.wind.speed,
         feels: response.data.temperature.feels_like,
