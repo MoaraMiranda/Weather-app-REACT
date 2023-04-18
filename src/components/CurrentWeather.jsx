@@ -43,7 +43,6 @@ export default function CurrentWeather(props) {
             </a>
             | °F{" "}
           </span>
-          <h3 className="header-city">{props.city}</h3>
         </div>
       </div>
     );
