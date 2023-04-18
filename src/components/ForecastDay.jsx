@@ -9,7 +9,10 @@ export default function ForecastDay(props) {
   return (
     <>
       <div className="weather-forecast-day">{day()}</div>
-      <img src={props.data.condition.icon_url} alt="icon" />
+      <img
+        src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+        alt="icon"
+      />
       <div className="weather-forecast-temp">
         <span>{Math.round(props.data.temperature.maximum)}°</span>
         <span className="weather-forecast-temperature-min">
