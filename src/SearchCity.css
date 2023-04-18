@@ -16,6 +16,7 @@ input {
   margin-right: 13px;
   border: none;
   flex: 1;
+  -webkit-appearance: none;
 }
 .button-input {
   background-color: #03b6d7;
